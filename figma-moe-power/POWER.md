@@ -1,7 +1,7 @@
 ---
 name: "figma-moe-power"
 displayName: "Figma → MOE Angular"
-description: "כללים והנחיות מדויקים להמרת עיצובי Figma לקוד Angular/PrimeNG לפי תשתית @moe/mng-lib. בשלב פיתוח — יהפוך לתשתית רוחבית למשרד."
+description: "כללים והנחיות מדויקים להמרת עיצובי Figma לקוד PrimeNG לפי תשתית @moe/mng-lib. בשלב פיתוח — יהפוך לתשתית רוחבית למשרד."
 keywords:
   - "figma"
   - "עיצוב"
