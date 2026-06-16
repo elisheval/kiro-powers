@@ -10,40 +10,39 @@ inclusion: auto
 
 ## איך לסרוק
 
-1. גש ל-URL הבא כדי לקבל את רשימת התיקיות ב-repo:
-   `https://github.com/elisheval/kiro-powers/tree/main`
+1. גש ל-GitHub API כדי לקבל רשימת תיקיות:
+   `https://api.github.com/repos/elisheval/kiro-powers/contents`
 
-2. כל תיקיה ברמה הראשונה היא Power. לכל אחת, גש ל:
-   `https://github.com/elisheval/kiro-powers/blob/main/<folder-name>/POWER.md`
+2. כל תיקיה מסוג `"type": "dir"` היא Power. לכל אחת, קרא את ה-POWER.md:
+   `https://raw.githubusercontent.com/elisheval/kiro-powers/main/<folder-name>/POWER.md`
 
-3. קרא את ה-frontmatter של כל `POWER.md` כדי לחלץ:
+3. חלץ מה-frontmatter:
    - `displayName` — שם ה-Power
    - `description` — תיאור
    - `keywords` — מילות מפתח
 
-## פורמט תצוגה
+## פורמט תצוגה בצ'אט
 
-הצג את הרשימה בפורמט הבא:
+הצג רשימה מסודרת בפורמט הבא:
 
 ```
-## 🔌 Powers זמינים ב-repo
+## 🔌 Powers זמינים (מקור: GitHub)
 
-| # | שם | תיאור | מילות מפתח |
-|---|-----|--------|------------|
-| 1 | {displayName} | {description} | {keywords} |
+- **{displayName}**
+  תיאור: {description}
+  URL: `https://github.com/elisheval/kiro-powers/tree/main/{folder}`
 
-### ייבוא
-
-כדי לייבא power ל-Kiro, העתיקי את ה-URL הבא להגדרות:
-`https://github.com/elisheval/kiro-powers/tree/main/<folder-name>`
+- **{displayName}**
+  תיאור: {description}
+  URL: `https://github.com/elisheval/kiro-powers/tree/main/{folder}`
 ```
 
 ## כלים לשימוש
 
-- השתמש ב-`webFetch` כדי לגשת לעמודי GitHub
-- אם webFetch לא מחזיר תוכן מספיק, נסה mode "rendered"
-- חלופה: השתמש ב-`remote_web_search` עם query ממוקד ל-repo
+- השתמש ב-`webFetch` עם URL של GitHub API (`https://api.github.com/repos/elisheval/kiro-powers/contents`)
+- לקריאת POWER.md השתמש ב: `https://raw.githubusercontent.com/elisheval/kiro-powers/main/<folder>/POWER.md`
 
 ## הערות
 - אם ה-repo פרטי ו-web fetch לא עובד, הציע למשתמש להשתמש ב-GitHub API token
-- תמיד הצג את ה-URL המלא לייבוא כדי שקל להעתיק
+- הצג תמיד את ה-URL המלא לייבוא
+- **חשוב:** הנתונים חייבים לבוא מ-GitHub, לא מקבצים מקומיים!
